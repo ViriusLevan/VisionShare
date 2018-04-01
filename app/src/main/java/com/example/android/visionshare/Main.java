@@ -32,11 +32,11 @@ public class Main extends AppCompatActivity {
                 break;
             case R.id.navigation_submission:
                 mTextMessage.setText(R.string.title_submission);
-                selectedFragment= (Fragment) new Submission();
+                selectedFragment= Submission.newInstance();
                 break;
             case R.id.navigation_my_account:
                 mTextMessage.setText(R.string.title_my_account);
-                //selectedFragment = My_Account.newInstance();
+                selectedFragment = My_Account.newInstance();
                 break;
         }
         return selectedFragment;
