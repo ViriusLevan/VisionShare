@@ -1,5 +1,6 @@
 package com.example.android.visionshare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -22,23 +23,23 @@ public class Main extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.navigation_home:
                     mTextMessage.setText(R.string.title_home);
-                    selectedFragment = Submission.newInstance();
+                    //selectedFragment = Submission.newInstance();
                     break;
                 case R.id.navigation_trending:
                     mTextMessage.setText(R.string.title_trending);
-                    selectedFragment = Submission.newInstance();
+                    //selectedFragment = Submission.newInstance();
                     break;
                 case R.id.navigation_news:
                     mTextMessage.setText(R.string.title_news);
-                    selectedFragment = Submission.newInstance();
+                    //selectedFragment = Submission.newInstance();
                     break;
                 case R.id.navigation_submission:
                     mTextMessage.setText(R.string.title_submission);
-                    selectedFragment = Submission.newInstance();
+                    selectedFragment= (Fragment) new Submission();
                     break;
                 case R.id.navigation_my_account:
                     mTextMessage.setText(R.string.title_my_account);
-                    selectedFragment = My_Account.newInstance();
+                    //selectedFragment = My_Account.newInstance();
                     break;
 
 
