@@ -14,36 +14,40 @@ public class Main extends AppCompatActivity {
 
     private TextView mTextMessage;
 
+    public Fragment displayFragment(int id)
+    {
+        Fragment selectedFragment = null;
+        switch (id) {
+            case R.id.navigation_home:
+                mTextMessage.setText(R.string.title_home);
+                selectedFragment= (Fragment) new Map();
+                break;
+            case R.id.navigation_trending:
+                mTextMessage.setText(R.string.title_trending);
+                //selectedFragment = Submission.newInstance();
+                break;
+            case R.id.navigation_news:
+                mTextMessage.setText(R.string.title_news);
+                //selectedFragment = Submission.newInstance();
+                break;
+            case R.id.navigation_submission:
+                mTextMessage.setText(R.string.title_submission);
+                selectedFragment= (Fragment) new Submission();
+                break;
+            case R.id.navigation_my_account:
+                mTextMessage.setText(R.string.title_my_account);
+                //selectedFragment = My_Account.newInstance();
+                break;
+        }
+        return selectedFragment;
+    }
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            Fragment selectedFragment = null;
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    mTextMessage.setText(R.string.title_home);
-                    //selectedFragment = Submission.newInstance();
-                    break;
-                case R.id.navigation_trending:
-                    mTextMessage.setText(R.string.title_trending);
-                    //selectedFragment = Submission.newInstance();
-                    break;
-                case R.id.navigation_news:
-                    mTextMessage.setText(R.string.title_news);
-                    //selectedFragment = Submission.newInstance();
-                    break;
-                case R.id.navigation_submission:
-                    mTextMessage.setText(R.string.title_submission);
-                    selectedFragment= (Fragment) new Submission();
-                    break;
-                case R.id.navigation_my_account:
-                    mTextMessage.setText(R.string.title_my_account);
-                    //selectedFragment = My_Account.newInstance();
-                    break;
-
-
-            }
+            Fragment selectedFragment = displayFragment(item.getItemId());
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.container, selectedFragment);
             transaction.commit();
@@ -55,17 +59,16 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        if(savedInstanceState==null)
+        {
+            Fragment selectedFragment = displayFragment(R.id.navigation_home);
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.container, selectedFragment);
+            transaction.commit();
+        }
     }
-
-    /*
-    //Manually displaying the first fragment - one time only
-    FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-    transaction.replace(R.id.frame_layout, ItemOneFragment.newInstance());
-    transaction.commit();
-    */
-
 }
