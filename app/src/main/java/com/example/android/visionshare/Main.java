@@ -28,7 +28,7 @@ public class Main extends AppCompatActivity {
                 break;
             case R.id.navigation_news:
                 mTextMessage.setText(R.string.title_news);
-                //selectedFragment = Submission.newInstance();
+                selectedFragment = (Fragment) new News();
                 break;
             case R.id.navigation_submission:
                 mTextMessage.setText(R.string.title_submission);

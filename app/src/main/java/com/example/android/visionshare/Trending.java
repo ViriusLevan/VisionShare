@@ -27,8 +27,7 @@ public class Trending extends Fragment {
 
         Spinner dropdown = view.findViewById(R.id.tranding_spinner);
         ArrayList<String> items = new ArrayList<String>();
-        items.add("Daily");
-        items.add("Weekly");
+        items.add("Now");
         items.add("Monthly");
         dropdown.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items));
 
