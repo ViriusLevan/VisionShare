@@ -7,6 +7,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 public class Submission extends Fragment{
+
+    
     View view;
     public static Submission newInstance() {
         Submission fragment = new Submission();

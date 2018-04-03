@@ -29,26 +29,12 @@ public class My_Account extends Fragment {
         TabLayout tabs = (TabLayout) view.findViewById(R.id.my_account_tabs);
         tabs.setupWithViewPager(viewPager);
 
-
         return view;
-
-        //return inflater.inflate(R.layout.fragment_my_account, container, false);
-
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
 
-        /*
-        // Get the ViewPager and set it's PagerAdapter so that it can display items
-        ViewPager viewPager = (ViewPager) getView().findViewById(R.id.viewpager);
-        viewPager.setAdapter(new FragmentTabPageAdapter(getFragmentManager(),
-                getActivity().getApplicationContext()));
-
-        // Give the TabLayout the ViewPager
-        TabLayout tabLayout = (TabLayout) getView().findViewById(R.id.my_account_tabs);
-        tabLayout.setupWithViewPager(viewPager);
-        */
     }
 
     @Override
@@ -71,7 +57,7 @@ public class My_Account extends Fragment {
     // Add Fragments to Tabs
     private void setupViewPager(ViewPager viewPager) {
 
-
+        //Adding tabs using adapter subclass, then setting viewPager adapter
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(My_Account_Info.newInstance(), "My Info");
         adapter.addFragment(My_Account_Projects.newInstance(), "My Projects");
@@ -79,6 +65,7 @@ public class My_Account extends Fragment {
 
     }
 
+    //Adapter Subclass for adding tabs
     static class Adapter extends FragmentPagerAdapter {
         private final List<Fragment> mFragmentList = new ArrayList<>();
         private final List<String> mFragmentTitleList = new ArrayList<>();
