@@ -43,6 +43,9 @@ public class Main extends AppCompatActivity {
                 selectedFragment = My_Account.newInstance();
                 break;
         }
+        BottomNavigationView bottomNavigationView
+                = (BottomNavigationView) findViewById(R.id.navigationView);
+        BottomNavigationViewHelper.disableShiftMode(bottomNavigationView);
         return selectedFragment;
     }
 
