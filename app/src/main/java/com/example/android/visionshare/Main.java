@@ -1,11 +1,14 @@
 package com.example.android.visionshare;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -13,6 +16,7 @@ import android.widget.TextView;
 public class Main extends AppCompatActivity {
 
     private TextView mTextMessage;
+    ActionBar actionBar;
 
     public Fragment displayFragment(int id)
     {
@@ -62,6 +66,13 @@ public class Main extends AppCompatActivity {
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigationView);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#22a7f0")));
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setLogo(R.drawable.ic_actionbar_logo);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
 
         if(savedInstanceState==null)
         {
