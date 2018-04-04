@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "862109970943",
+    "firebase_url": "https://visionshare-2b578.firebaseio.com",
+    "project_id": "visionshare-2b578",
+    "storage_bucket": "visionshare-2b578.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:862109970943:android:d73e052e1a058cfb",
+        "android_client_info": {
+          "package_name": "com.example.android.visionshare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "862109970943-ojm2rrst90rioifcbp34l84lucghh5ne.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.android.visionshare",
+            "certificate_hash": "cc0f2d86d626ec0c0dc07c154cb0372dcbe1a22f"
+          }
+        },
+        {
+          "client_id": "862109970943-nbpn7gi4fne8160m378mrgh9gmb4u7er.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdK6PkqZN1mClM-aQMrg0F2VT0zlH-yic"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "862109970943-nbpn7gi4fne8160m378mrgh9gmb4u7er.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
