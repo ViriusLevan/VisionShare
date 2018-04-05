@@ -40,9 +40,9 @@ public class test_firebase extends AppCompatActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        inputName = findViewById(R.id.editText5);
-        inputPass = findViewById(R.id.editText7);
-        btnSave = findViewById(R.id.button2);
+//        inputName = findViewById(R.id.editText5);
+//        inputPass = findViewById(R.id.editText7);
+//        btnSave = findViewById(R.id.button2);
 
         myRef = FirebaseDatabase.getInstance().getReference();
         Log.d("My Ref", myRef.toString());

@@ -1,50 +1,66 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.visionshare.Map">
+    tools:context="com.example.android.visionshare.Map"
+    android:orientation="vertical"
+    android:weightSum="2"
+    >
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="News"/>
+        android:layout_height="match_parent"
+        android:id="@+id/map_home_map"
+        android:orientation="vertical"
+        android:layout_weight="1">
 
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/map_news_list"></ListView>
+        <include layout="@layout/activity_maps"/>
+
     </LinearLayout>
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:weightSum="2">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Maps"
-            android:id="@+id/map_button"/>
-    </FrameLayout>
+            android:orientation="vertical"
+            android:layout_weight="1">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="News"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_news_list"></ListView>
+        </LinearLayout>
 
-        <ListView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/map_trending_list"
-            android:layout_alignParentBottom="true"></ListView>
+            android:layout_weight="1">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Trending"
-            android:layout_above="@+id/map_trending_list"
-            android:id="@+id/map_trending"/>
-    </RelativeLayout>
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/map_trending_list"
+                android:layout_alignParentBottom="true"></ListView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Trending"
+                android:layout_above="@+id/map_trending_list"
+                android:id="@+id/map_trending"/>
+        </RelativeLayout>
+    </LinearLayout>
+
 
     <!--<RelativeLayout-->
         <!--android:layout_width="match_parent"-->
@@ -65,4 +81,4 @@
             <!--android:layout_marginTop="20dp"-->
             <!--android:id="@+id/map_search" />-->
     <!--</RelativeLayout>-->
-</FrameLayout>
+</LinearLayout>
