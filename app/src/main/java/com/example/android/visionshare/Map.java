@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +37,24 @@ public class Map extends Fragment implements OnMapReadyCallback {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
-        view = inflater.inflate(R.layout.fragment_map, container, false);
-        SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        SupportMapFragment mapFragment = null;
+        if (view != null)
+        {
+            ViewGroup parent = (ViewGroup)view.getParent();
+            if(parent != null)
+            {
+                parent.removeAllViews();
+            }
+        }
+        try {
+            view = inflater.inflate(R.layout.fragment_map, container, false);
+            mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        }
+        catch (InflateException e)
+        {
+            mapFragment = (SupportMapFragment) getFragmentManager().findFragmentById(R.id.map);
+        }
+
         mapFragment.getMapAsync(this);
 
         PlaceAutocompleteFragment autocompleteFragment = (PlaceAutocompleteFragment)
