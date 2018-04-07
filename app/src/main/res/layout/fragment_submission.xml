@@ -1,48 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"/>
+        android:id="@+id/myProjectNameTV"
+        android:layout_width="218dp"
+        android:layout_height="36dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/myProjectImageIV"
+        android:layout_marginTop="21dp"
+        android:text="Name" />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Description"/>
+        android:id="@+id/myProjectDescriptionTV"
+        android:layout_width="198dp"
+        android:layout_height="66dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/myProjectLocationTV"
+        android:layout_marginTop="122dp"
+        android:text="Description" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+        android:id="@+id/myProjectLocationTV"
+        android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:text="Image"/>
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/myProjectImageIV"
+        android:layout_marginRight="39dp"
+        android:text="Location" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Location"/>
+    <ImageView
+        android:id="@+id/myProjectImageIV"
+        android:layout_width="100dp"
+        android:layout_height="99dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="39dp"
+        android:layout_marginTop="81dp"
+        app:srcCompat="@android:drawable/alert_dark_frame" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="227dp"
-        android:layout_height="41dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"/>
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"/>
-</LinearLayout>
+</RelativeLayout>
