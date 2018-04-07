@@ -4,18 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.android.visionshare.MapsActivity">
+    tools:context="com.example.android.visionshare.GoogleMap">
 
     <fragment
         android:id="@+id/place_autocomplete_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        class="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
         />
 
-    <fragment
+    <com.google.android.gms.maps.MapView
         android:id="@+id/mapView"
-        android:name="com.google.android.gms.maps.MapView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         />

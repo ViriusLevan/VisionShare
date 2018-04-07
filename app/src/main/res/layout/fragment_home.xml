@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.android.visionshare.Map"
+    tools:context="com.example.android.visionshare.Home"
     android:orientation="vertical"
     android:weightSum="2"
     >
@@ -72,25 +72,4 @@
                 android:id="@+id/map_trending"/>
         </RelativeLayout>
     </LinearLayout>
-
-
-    <!--<RelativeLayout-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
-
-        <!--<ImageView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:adjustViewBounds="true"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--android:src="@drawable/map" />-->
-
-        <!--<EditText-->
-            <!--android:layout_width="200dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:hint="Search"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_marginTop="20dp"-->
-            <!--android:id="@+id/map_search" />-->
-    <!--</RelativeLayout>-->
 </LinearLayout>

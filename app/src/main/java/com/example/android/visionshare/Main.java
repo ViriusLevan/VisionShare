@@ -3,6 +3,7 @@ package com.example.android.visionshare;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
@@ -13,7 +14,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import android.widget.TextView;
 
-public class Main extends AppCompatActivity {
+import com.example.android.visionshare.Home.OnFragmentInteractionListener;
+
+public class Main extends AppCompatActivity implements GoogleMap.OnFragmentInteractionListener, OnFragmentInteractionListener{
 
 //    private TextView mTextMessage;
     ActionBar actionBar;
@@ -24,7 +27,7 @@ public class Main extends AppCompatActivity {
         switch (id) {
             case R.id.navigation_home:
 //                mTextMessage.setText(R.string.title_home);
-                selectedFragment= (Fragment) new Map();
+                selectedFragment= (Fragment) new GoogleMap();
                 break;
             case R.id.navigation_trending:
 //                mTextMessage.setText(R.string.title_trending);
@@ -84,5 +87,15 @@ public class Main extends AppCompatActivity {
             transaction.replace(R.id.container, selectedFragment);
             transaction.commit();
         }
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
 }
