@@ -16,7 +16,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Trending"
+            android:textSize="18sp"
+            android:text="TRENDING"
+            android:textColor="#000000"
+            android:fontFamily="@font/futura_book_font"
+            android:gravity="center"
             />
 
         <ListView
@@ -34,6 +38,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/blue_button"
                 android:text="Go To Map"
+                android:textColor="@color/white"
                 android:layout_alignParentBottom="true"/>
         </RelativeLayout>
 
@@ -48,7 +53,11 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="News"
+            android:text="NEWS"
+            android:textSize="18sp"
+            android:textColor="#000000"
+            android:fontFamily="@font/futura_book_font"
+            android:gravity="center"
             />
 
         <ListView
