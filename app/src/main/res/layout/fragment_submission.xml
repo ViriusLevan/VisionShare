@@ -28,7 +28,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/submissionSubmitBtn"
-            android:text="Name" />
+            android:text="Name"
+            android:textColor="#000000"
+            android:textSize="12sp"/>
 
         <EditText
             android:id="@+id/submissionNameET"
@@ -42,7 +44,9 @@
             android:id="@+id/submissionLocationTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Location" />
+            android:text="Location"
+            android:textColor="#000000"
+            android:textSize="12sp"/>
 
         <EditText
             android:id="@+id/submissionLocationET"
@@ -56,7 +60,9 @@
             android:id="@+id/submissionDescriptionTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description" />
+            android:text="Description"
+            android:textColor="#000000"
+            android:textSize="12sp"/>
 
         <EditText
             android:id="@+id/submissionDescription"
