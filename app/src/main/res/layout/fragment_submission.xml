@@ -7,75 +7,78 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ImageView
+        android:id="@+id/submissionImageIV"
+        android:layout_width="100dp"
+        android:layout_height="99dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        app:srcCompat="@android:drawable/alert_dark_frame" />
+
     <TextView
         android:id="@+id/submissionNameTV"
         android:layout_width="218dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="159dp"
-        android:text="Name" />
+        android:layout_alignStart="@+id/submissionSubmitBtn"
+        android:layout_marginTop="129dp"
+        android:text="Name"
+        android:layout_alignLeft="@+id/submissionSubmitBtn" />
 
     <TextView
         android:id="@+id/submissionDescriptionTV"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/submissionNameTV"
-        android:layout_marginBottom="138dp"
-        android:text="Description" />
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_marginBottom="188dp"
+        android:text="Description"
+        android:layout_alignLeft="@+id/submissionNameTV" />
 
     <TextView
         android:id="@+id/submissionLocationTV"
         android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/submissionNameTV"
-        android:layout_marginBottom="233dp"
-        android:text="Location" />
-
-    <ImageView
-        android:id="@+id/submissionImageIV"
-        android:layout_width="100dp"
-        android:layout_height="99dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="39dp"
-        app:srcCompat="@android:drawable/alert_dark_frame" />
+        android:layout_above="@+id/submissionLocationET"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:text="Location"
+        android:layout_alignLeft="@+id/submissionNameTV" />
 
     <EditText
         android:id="@+id/submissionNameET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/submissionNameTV"
-        android:layout_marginTop="192dp"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_below="@+id/submissionNameTV"
         android:ems="10"
+        android:hint="Name"
         android:inputType="textPersonName"
-        android:text="Name" />
+        android:layout_alignLeft="@+id/submissionNameTV" />
 
     <EditText
         android:id="@+id/submissionLocationET"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/submissionNameTV"
-        android:layout_marginBottom="179dp"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_centerVertical="true"
         android:ems="10"
+        android:hint="Location"
         android:inputType="textPersonName"
-        android:text="Location" />
+        android:layout_alignLeft="@+id/submissionNameTV" />
 
     <EditText
-        android:id="@+id/submissionDescriptionET"
+        android:id="@+id/submissionDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/submissionNameTV"
-        android:layout_marginBottom="81dp"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_below="@+id/submissionDescriptionTV"
+        android:layout_marginTop="-188dp"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Description" />
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:layout_alignLeft="@+id/submissionNameTV" />
 
     <Button
         android:id="@+id/submissionSubmitBtn"
@@ -84,6 +87,8 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="15dp"
         android:layout_centerHorizontal="true"
-        android:text="Button" />
+        android:text="Button"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_button"/>
 
 </RelativeLayout>
