@@ -16,69 +16,58 @@
         android:layout_marginTop="18dp"
         app:srcCompat="@android:drawable/alert_dark_frame" />
 
-    <TextView
-        android:id="@+id/submissionNameTV"
-        android:layout_width="218dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/submissionSubmitBtn"
-        android:layout_marginTop="129dp"
-        android:text="Name"
-        android:layout_alignLeft="@+id/submissionSubmitBtn" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/submissionImageIV"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
-    <TextView
-        android:id="@+id/submissionDescriptionTV"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/submissionNameTV"
-        android:layout_marginBottom="188dp"
-        android:text="Description"
-        android:layout_alignLeft="@+id/submissionNameTV" />
+        <TextView
+            android:id="@+id/submissionNameTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/submissionSubmitBtn"
+            android:text="Name" />
 
-    <TextView
-        android:id="@+id/submissionLocationTV"
-        android:layout_width="183dp"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/submissionLocationET"
-        android:layout_alignStart="@+id/submissionNameTV"
-        android:text="Location"
-        android:layout_alignLeft="@+id/submissionNameTV" />
+        <EditText
+            android:id="@+id/submissionNameET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Name"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/submissionNameET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/submissionNameTV"
-        android:layout_below="@+id/submissionNameTV"
-        android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/submissionNameTV" />
+        <TextView
+            android:id="@+id/submissionLocationTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location" />
 
-    <EditText
-        android:id="@+id/submissionLocationET"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/submissionNameTV"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:hint="Location"
-        android:inputType="textPersonName"
-        android:layout_alignLeft="@+id/submissionNameTV" />
+        <EditText
+            android:id="@+id/submissionLocationET"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Location"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/submissionDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/submissionNameTV"
-        android:layout_below="@+id/submissionDescriptionTV"
-        android:layout_marginTop="-188dp"
-        android:ems="10"
-        android:hint="Description"
-        android:inputType="textMultiLine"
-        android:singleLine="false"
-        android:layout_alignLeft="@+id/submissionNameTV" />
+        <TextView
+            android:id="@+id/submissionDescriptionTV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Description" />
+
+        <EditText
+            android:id="@+id/submissionDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Description"
+            android:inputType="textMultiLine"
+            android:singleLine="false" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/submissionSubmitBtn"
