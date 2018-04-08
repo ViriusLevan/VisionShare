@@ -16,6 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Name"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +31,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Place"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crowdfundingNameTV" />
@@ -42,6 +44,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Funds Needed"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crowdfundingFundsGatheredTV" />
 
@@ -67,6 +70,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:text="Funds Gathered"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crowdfundingImageIV" />
 
@@ -80,6 +84,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Description"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/crowdfundingFundsNeededTV" />

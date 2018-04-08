@@ -26,6 +26,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:fontFamily="@font/futura_book_font"
         android:textColor="@android:color/background_light"
         android:textSize="24sp"
         android:textStyle="bold"

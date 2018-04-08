@@ -16,6 +16,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Headline"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +45,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Place"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newsHeadlineTV" />
@@ -58,6 +60,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Content"
+        android:fontFamily="@font/futura_book_font"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/newsImageIV" />
