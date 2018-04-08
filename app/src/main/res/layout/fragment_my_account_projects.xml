@@ -13,7 +13,10 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/myProjectImageIV"
         android:layout_marginTop="21dp"
-        android:text="Name" />
+        android:text="Name"
+        android:textSize="18sp"
+        android:textColor="#000000"
+        android:fontFamily="@font/futura_book_font"/>
 
     <TextView
         android:id="@+id/myProjectDescriptionTV"
@@ -22,7 +25,9 @@
         android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/myProjectLocationTV"
         android:layout_marginTop="122dp"
-        android:text="Description" />
+        android:text="Description"
+        android:textColor="#000000"
+        android:fontFamily="@font/futura_book_font"/>
 
     <TextView
         android:id="@+id/myProjectLocationTV"
@@ -31,7 +36,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignTop="@+id/myProjectImageIV"
         android:layout_marginRight="39dp"
-        android:text="Location" />
+        android:text="Location"
+        android:textColor="#000000"
+        android:fontFamily="@font/futura_book_font"/>
 
     <ImageView
         android:id="@+id/myProjectImageIV"
