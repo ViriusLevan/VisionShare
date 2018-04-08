@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginScreen">
+
+    <ImageView
+        android:id="@+id/formBack"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"
+        android:layout_alignParentLeft="true" />
+
+    <ImageView
+        android:id="@+id/formLogo1"
+        android:layout_width="match_parent"
+        android:layout_height="107dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="33dp"
+        android:src="@drawable/ic_actionbar_logo"
+        android:layout_alignParentLeft="true" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/formLogo1"
+        android:layout_alignParentLeft="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="30dp"
+            android:layout_marginStart="30dp"
+            android:background="@drawable/trans_white_rectangle"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/userPhone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="1dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/rounded_white"
+                android:drawableLeft="@drawable/ic_phone"
+                android:drawablePadding="5dp"
+                android:hint="Nomor Handphone"
+                android:textColor="@color/white"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/textViewOr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:gravity="center"
+                android:paddingBottom="10dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:text="Atau"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/userEmail"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/rounded_white"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawablePadding="5dp"
+                android:hint="Email"
+                android:textColor="@color/white"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/userPassword"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginStart="15dp"
+                android:background="@drawable/rounded_white"
+                android:drawableLeft="@drawable/ic_password"
+                android:drawablePadding="5dp"
+                android:hint="Password"
+                android:textColor="@color/white"
+                android:inputType="textPassword"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/loginAccount"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="11dp"
+                android:background="@drawable/login_button"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
+
+            <TextView
+                android:id="@+id/textViewQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="Belum punya akun?" />
+
+            <Button
+                android:id="@+id/registerAccount"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/register_button"
+                android:text="REGISTER"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
