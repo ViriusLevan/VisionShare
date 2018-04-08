@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +22,8 @@ public class Submission extends Fragment{
 
 
     View view;
+    ImageView imageView;
+    Button button;
     public static Submission newInstance() {
         Submission fragment = new Submission();
         return fragment;
