@@ -7,41 +7,88 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/myProjectNameTV"
-        android:layout_width="218dp"
-        android:layout_height="36dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/myProjectImageIV"
-        android:layout_marginTop="21dp"
-        android:text="Name" />
-
-    <TextView
-        android:id="@+id/myProjectDescriptionTV"
-        android:layout_width="198dp"
-        android:layout_height="66dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/myProjectLocationTV"
-        android:layout_marginTop="122dp"
-        android:text="Description" />
-
-    <TextView
-        android:id="@+id/myProjectLocationTV"
-        android:layout_width="183dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/myProjectImageIV"
-        android:layout_marginRight="39dp"
-        android:text="Location" />
-
     <ImageView
-        android:id="@+id/myProjectImageIV"
+        android:id="@+id/submissionImageIV"
         android:layout_width="100dp"
         android:layout_height="99dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="81dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
         app:srcCompat="@android:drawable/alert_dark_frame" />
+
+    <TextView
+        android:id="@+id/submissionNameTV"
+        android:layout_width="218dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/submissionSubmitBtn"
+        android:layout_marginTop="129dp"
+        android:text="Name"
+        android:layout_alignLeft="@+id/submissionSubmitBtn" />
+
+    <TextView
+        android:id="@+id/submissionDescriptionTV"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_marginBottom="188dp"
+        android:text="Description"
+        android:layout_alignLeft="@+id/submissionNameTV" />
+
+    <TextView
+        android:id="@+id/submissionLocationTV"
+        android:layout_width="183dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/submissionLocationET"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:text="Location"
+        android:layout_alignLeft="@+id/submissionNameTV" />
+
+    <EditText
+        android:id="@+id/submissionNameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_below="@+id/submissionNameTV"
+        android:ems="10"
+        android:hint="Name"
+        android:inputType="textPersonName"
+        android:layout_alignLeft="@+id/submissionNameTV" />
+
+    <EditText
+        android:id="@+id/submissionLocationET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="Location"
+        android:inputType="textPersonName"
+        android:layout_alignLeft="@+id/submissionNameTV" />
+
+    <EditText
+        android:id="@+id/submissionDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/submissionNameTV"
+        android:layout_below="@+id/submissionDescriptionTV"
+        android:layout_marginTop="-188dp"
+        android:ems="10"
+        android:hint="Description"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:layout_alignLeft="@+id/submissionNameTV" />
+
+    <Button
+        android:id="@+id/submissionSubmitBtn"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="Button"
+        android:textColor="@color/white"
+        android:background="@drawable/blue_button"/>
 
 </RelativeLayout>
