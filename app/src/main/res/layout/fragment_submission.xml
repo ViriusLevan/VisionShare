@@ -8,40 +8,82 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/myProjectNameTV"
+        android:id="@+id/submissionNameTV"
         android:layout_width="218dp"
-        android:layout_height="36dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/myProjectImageIV"
-        android:layout_marginTop="21dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="159dp"
         android:text="Name" />
 
     <TextView
-        android:id="@+id/myProjectDescriptionTV"
-        android:layout_width="198dp"
-        android:layout_height="66dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/myProjectLocationTV"
-        android:layout_marginTop="122dp"
+        android:id="@+id/submissionDescriptionTV"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/submissionNameTV"
+        android:layout_marginBottom="138dp"
         android:text="Description" />
 
     <TextView
-        android:id="@+id/myProjectLocationTV"
+        android:id="@+id/submissionLocationTV"
         android:layout_width="183dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignTop="@+id/myProjectImageIV"
-        android:layout_marginRight="39dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/submissionNameTV"
+        android:layout_marginBottom="233dp"
         android:text="Location" />
 
     <ImageView
-        android:id="@+id/myProjectImageIV"
+        android:id="@+id/submissionImageIV"
         android:layout_width="100dp"
         android:layout_height="99dp"
-        android:layout_alignParentLeft="true"
+        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="39dp"
-        android:layout_marginTop="81dp"
+        android:layout_marginTop="39dp"
         app:srcCompat="@android:drawable/alert_dark_frame" />
+
+    <EditText
+        android:id="@+id/submissionNameET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/submissionNameTV"
+        android:layout_marginTop="192dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/submissionLocationET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/submissionNameTV"
+        android:layout_marginBottom="179dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Location" />
+
+    <EditText
+        android:id="@+id/submissionDescriptionET"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/submissionNameTV"
+        android:layout_marginBottom="81dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Description" />
+
+    <Button
+        android:id="@+id/submissionSubmitBtn"
+        android:layout_width="273dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="15dp"
+        android:layout_centerHorizontal="true"
+        android:text="Button" />
 
 </RelativeLayout>
