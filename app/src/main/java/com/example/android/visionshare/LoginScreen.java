@@ -24,6 +24,7 @@ public class LoginScreen extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(LoginScreen.this, Main.class));
+                finish();
             }
         });
 

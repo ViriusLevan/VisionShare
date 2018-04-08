@@ -19,7 +19,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -100,33 +101,31 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center"
-                android:layout_marginBottom="35dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/register_button"
                 android:text="REGISTER"
                 android:textColor="@color/white"
                 android:textStyle="normal" />
+            <TextView
+                android:id="@+id/textViewQuestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="Sudah punya akun?" />
+            <Button
+                android:id="@+id/loginAccount"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginBottom="35dp"
+                android:background="@drawable/blue_button"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:textStyle="normal" />
         </LinearLayout>
     </ScrollView>
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="76dp"
-        android:text="Sudah punya akun?"
-        android:textColor="@color/white"
-        android:textSize="15sp"/>
-    <Button
-        android:id="@+id/loginAccount"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginBottom="35dp"
-        android:background="@drawable/login_button"
-        android:text="REGISTER"
-        android:textColor="@color/white"
-        android:textStyle="normal" />
+
 </RelativeLayout>
