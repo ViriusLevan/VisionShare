@@ -23,8 +23,8 @@ public class Main extends AppCompatActivity {
         Fragment selectedFragment = null;
         switch (id) {
             case R.id.navigation_home:
-//                mTextMessage.setText(R.string.title_home);
-                selectedFragment= (Fragment) new Map();
+
+                selectedFragment= (Fragment) new Home();
                 break;
             case R.id.navigation_trending:
 //                mTextMessage.setText(R.string.title_trending);
