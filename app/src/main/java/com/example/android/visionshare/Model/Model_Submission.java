@@ -12,22 +12,22 @@ public class Model_Submission implements Serializable{
     public Model_Submission(String type, String name, String description, String location, String status,
                             String submittedBy, int fundingGoal){
 
-        this.type = type;
-        this.name = name;
-        this.description = description;
-        this.locationOrPlace = location;
-        this.status = status;
-        this.submittedBy = submittedBy;
-        this.fundingGoal = fundingGoal;
+        this.type               = type;
+        this.name               = name;
+        this.description        = description;
+        this.locationOrPlace    = location;
+        this.status             = status;
+        this.submittedBy        = submittedBy;
+        this.fundingGoal        = fundingGoal;
     }
 
-    public String getName(){return name;}
-    public String getDescription(){return description;}
-    public String getLocationOrPlace(){return locationOrPlace;}
-    public String getStatus(){return status;}
-    public String getSubmittedBy(){return submittedBy;}
-    public String getType(){return type;}
-    public int getFundingGoal(){return fundingGoal;}
+    public String getName()             {return name;}
+    public String getDescription()      {return description;}
+    public String getLocationOrPlace()  {return locationOrPlace;}
+    public String getStatus()           {return status;}
+    public String getSubmittedBy()      {return submittedBy;}
+    public String getType()             {return type;}
+    public int getFundingGoal()         {return fundingGoal;}
 
     public void setDescription(String description) {
         this.description = description;
