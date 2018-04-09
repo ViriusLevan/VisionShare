@@ -2,7 +2,7 @@ package com.example.android.visionshare.Model;
 
 import java.io.Serializable;
 
-public class Places implements Serializable {
+public class Model_Places implements Serializable {
 
     String idplace;
     String namaplace;
@@ -13,10 +13,10 @@ public class Places implements Serializable {
     String submitbyplace;
     String waktupostplace;
 
-    public Places(){
+    public Model_Places(){
     }
 
-    public Places(String idplace, String namaplace, String desplace, String lokasiplace, String longitudeplace, String latitudeplace, String submitbyplace, String waktupostplace) {
+    public Model_Places(String idplace, String namaplace, String desplace, String lokasiplace, String longitudeplace, String latitudeplace, String submitbyplace, String waktupostplace) {
         this.idplace = idplace;
         this.namaplace = namaplace;
         this.desplace = desplace;

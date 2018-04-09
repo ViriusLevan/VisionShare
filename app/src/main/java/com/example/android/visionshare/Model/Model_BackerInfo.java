@@ -2,16 +2,16 @@ package com.example.android.visionshare.Model;
 
 import java.io.Serializable;
 
-public class BackerInfo implements Serializable {
+public class Model_BackerInfo implements Serializable {
 
     String idfunding;
     String idbackerinfo;
     String totalfunded;
     String uidbackerinfo;
 
-    public BackerInfo(){}
+    public Model_BackerInfo(){}
 
-    public BackerInfo(String idfunding, String idbackerinfo, String totalfunded, String uidbackerinfo) {
+    public Model_BackerInfo(String idfunding, String idbackerinfo, String totalfunded, String uidbackerinfo) {
         this.idfunding = idfunding;
         this.idbackerinfo = idbackerinfo;
         this.totalfunded = totalfunded;

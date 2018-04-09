@@ -1,6 +1,5 @@
 package com.example.android.visionshare;
 
-import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -11,7 +10,6 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import android.widget.TextView;
 
 public class Main extends AppCompatActivity {
 
@@ -32,7 +30,7 @@ public class Main extends AppCompatActivity {
                 break;
             case R.id.navigation_news:
 //                mTextMessage.setText(R.string.title_news);
-                selectedFragment = (Fragment) new News();
+                selectedFragment = (Fragment) new Dashboard_News();
                 break;
             case R.id.navigation_submission:
 //                mTextMessage.setText(R.string.title_submission);

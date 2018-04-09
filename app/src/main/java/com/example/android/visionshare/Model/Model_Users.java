@@ -2,7 +2,7 @@ package com.example.android.visionshare.Model;
 
 import java.io.Serializable;
 
-public class Users implements Serializable{
+public class Model_Users implements Serializable{
 
     String nama;
     String email;
@@ -10,10 +10,10 @@ public class Users implements Serializable{
     String uid;
     String password;
 
-    public Users(){
+    public Model_Users(){
     }
 
-    public Users(String nama, String email, String phone, String uid, String password) {
+    public Model_Users(String nama, String email, String phone, String uid, String password) {
         this.nama = nama;
         this.email = email;
         this.phone = phone;

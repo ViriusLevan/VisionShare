@@ -2,7 +2,7 @@ package com.example.android.visionshare.Model;
 
 import java.io.Serializable;
 
-public class PlacesComRep implements Serializable {
+public class Model_PlacesComRep implements Serializable {
 
     String idplacecom;
     String idplacecomrep;
@@ -10,10 +10,10 @@ public class PlacesComRep implements Serializable {
     String timeplacecomrep;
     String uidplacecomrep;
 
-    public PlacesComRep(){
+    public Model_PlacesComRep(){
     }
 
-    public PlacesComRep(String idplacecom, String idplacecomrep, String conplacecomrep, String timeplacecomrep, String uidplacecomrep) {
+    public Model_PlacesComRep(String idplacecom, String idplacecomrep, String conplacecomrep, String timeplacecomrep, String uidplacecomrep) {
         this.idplacecom = idplacecom;
         this.idplacecomrep = idplacecomrep;
         this.conplacecomrep = conplacecomrep;

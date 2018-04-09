@@ -60,10 +60,10 @@ public class Dashboard extends Fragment {
 
         //Adding tabs using adapter subclass, then setting viewPager adapter
         Adapter adapter = new Adapter(getChildFragmentManager());
-        adapter.addFragment(new News(), "News");
-        adapter.addFragment(new News(), "Places");
-        adapter.addFragment(new Trending(), "Trending");
-        adapter.addFragment(new Trending(), "Funding");
+        adapter.addFragment(new Dashboard_News(), "News");
+        adapter.addFragment(new Dashboard_News(), "Places");
+        adapter.addFragment(new Dashboard_Trending(), "Trending");
+        adapter.addFragment(new Dashboard_Trending(), "Funding");
         viewPager.setAdapter(adapter);
     }
 

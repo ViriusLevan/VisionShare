@@ -7,10 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.example.android.visionshare.Model.GenericListObject;
+import com.example.android.visionshare.Model.Model_GenericListObject;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,12 +17,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.LinkedList;
-import java.util.Stack;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class News extends Fragment {
+public class Dashboard_News extends Fragment {
     private FirebaseDatabase fd;
     private DatabaseReference newsMetaRef;
     private ValueEventListener newsMetaListener;
@@ -39,7 +37,7 @@ public class News extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.fragment_news, container, false);
+        view = inflater.inflate(R.layout.fragment_dashboard_news, container, false);
         return view;
     }
 
@@ -52,12 +50,12 @@ public class News extends Fragment {
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(20).addValueEventListener(new ValueEventListener() {
 
-                    private LinkedList<GenericListObject> tempStack = new LinkedList<>();
+                    private LinkedList<Model_GenericListObject> tempStack = new LinkedList<>();
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot newsMeta : dataSnapshot.getChildren()){
 
-                            GenericListObject ins = new GenericListObject(
+                            Model_GenericListObject ins = new Model_GenericListObject(
                                     newsMeta.getKey(),
                                     newsMeta.child("Headline").getValue(String.class),
                                     String.valueOf(newsMeta.child("nOfComments").getValue()),

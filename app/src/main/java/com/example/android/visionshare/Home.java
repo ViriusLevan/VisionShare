@@ -1,8 +1,6 @@
 package com.example.android.visionshare;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -13,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
-import com.example.android.visionshare.Model.GenericListObject;
+import com.example.android.visionshare.Model.Model_GenericListObject;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -89,12 +87,12 @@ public class Home extends Fragment {
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(5).addValueEventListener(new ValueEventListener() {
 
-                    private LinkedList<GenericListObject> tempStack = new LinkedList<>();
+                    private LinkedList<Model_GenericListObject> tempStack = new LinkedList<>();
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot newsMeta : dataSnapshot.getChildren()){
 
-                            GenericListObject ins = new GenericListObject(
+                            Model_GenericListObject ins = new Model_GenericListObject(
                                     newsMeta.getKey(),
                                     newsMeta.child("Headline").getValue(String.class),
                                     String.valueOf(newsMeta.child("nOfComments").getValue()),

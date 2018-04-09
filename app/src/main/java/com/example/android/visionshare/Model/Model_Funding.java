@@ -2,7 +2,7 @@ package com.example.android.visionshare.Model;
 
 import java.io.Serializable;
 
-public class Funding implements Serializable {
+public class Model_Funding implements Serializable {
 
     String idplace;
     String idfunding;
@@ -11,9 +11,9 @@ public class Funding implements Serializable {
     String isstopfunding;
     String submitbyfunding;
 
-    public Funding(){}
+    public Model_Funding(){}
 
-    public Funding(String idplace, String idfunding, String targetfunding, String desfunding, String isstopfunding, String submitbyfunding) {
+    public Model_Funding(String idplace, String idfunding, String targetfunding, String desfunding, String isstopfunding, String submitbyfunding) {
         this.idplace = idplace;
         this.idfunding = idfunding;
         this.targetfunding = targetfunding;
