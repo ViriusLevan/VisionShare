@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +13,24 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
+import com.example.android.visionshare.Model.GenericListObject;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.LinkedList;
+
 public class Home extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private FirebaseDatabase fd;
+    private DatabaseReference newsMetaRef;
+    private ValueEventListener newsMetaListener;
+    private ListView newsList, trendingList;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -39,6 +53,8 @@ public class Home extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fd = FirebaseDatabase.getInstance();
+        newsMetaRef = fd.getReference().child("News Meta");
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -58,12 +74,42 @@ public class Home extends Fragment {
                 startActivity(a);
             }
         });
-        ListView newsList = view.findViewById(R.id.home_news_list);
-        ListView trendingList = view.findViewById(R.id.home_trending_list);
-        String[] news = {"Heboh naga di Tulung Agung", "Ikan Indosiar Mati", "[HELP] Desa Benowo sebagai tempat wisata"};
+        trendingList = view.findViewById(R.id.home_trending_list);
+
+
         String[] trend = {"Pantai Kute", "Tugu Pahlawan", "Bandar Jakarta"};
-        newsList.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, news));
         trendingList.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, trend));
         return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        newsList = view.findViewById(R.id.home_news_list);
+        newsMetaListener = newsMetaRef.orderByChild("Date Created")
+                .limitToLast(5).addValueEventListener(new ValueEventListener() {
+
+                    private LinkedList<GenericListObject> tempStack = new LinkedList<>();
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot newsMeta : dataSnapshot.getChildren()){
+
+                            GenericListObject ins = new GenericListObject(
+                                    newsMeta.getKey(),
+                                    newsMeta.child("Headline").getValue(String.class),
+                                    String.valueOf(newsMeta.child("nOfComments").getValue()),
+                                    "News"
+                            );
+                            tempStack.push(ins);
+                        }
+                        GenericListAdapter adapter = new GenericListAdapter(getContext(), tempStack);
+                        newsList.setAdapter(adapter);
+                    }
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                });
     }
 }
