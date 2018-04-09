@@ -1,6 +1,8 @@
 package com.example.android.visionshare;
 
 import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,21 +13,20 @@ import com.example.android.visionshare.Model.ListViewLayout;
 
 import java.util.ArrayList;
 
-public class TrendingAdapter extends ArrayAdapter{
+public class NewsAdapter extends ArrayAdapter {
 
-    public TrendingAdapter(Context context, ArrayList<ListViewLayout> data) {
-        super(context, R.layout.activity_trending_adapter, data);
+    public NewsAdapter(Context context, ArrayList<ListViewLayout> data) {
+        super(context, R.layout.activity_news_adapter, data);
     }
-
     public View getView(int position, View convertView, ViewGroup parent) {
         ListViewLayout item = (ListViewLayout) getItem(position);
 
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_trending_adapter, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_news_adapter, parent, false);
         }
 
-        TextView title = convertView.findViewById(R.id.trending_title);
-        TextView num_comment = convertView.findViewById(R.id.trending_comment_number);
+        TextView title = convertView.findViewById(R.id.news_title);
+        TextView num_comment = convertView.findViewById(R.id.news_comment_number);
 
         title.setText(item.getTitle());
         num_comment.setText(item.getNum_of_comment());

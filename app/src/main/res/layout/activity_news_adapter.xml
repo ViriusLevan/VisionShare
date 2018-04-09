@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TrendingAdapter"
+    tools:context=".NewsAdapter"
     android:orientation="vertical">
-
     <TextView
-        android:id="@+id/trending_title"
+        android:id="@+id/news_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Pantai Kute"
+        android:text="Ada pelangi di mata orang"
         android:fontFamily="@font/futura_book_font"
         android:textSize="30sp"/>
 
@@ -32,7 +31,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/trending_comment_number"
+                android:id="@+id/news_comment_number"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
@@ -42,7 +41,5 @@
         </RelativeLayout>
 
     </LinearLayout>
-
-
 
 </LinearLayout>

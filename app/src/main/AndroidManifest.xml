@@ -62,7 +62,8 @@
             android:name=".MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity android:name=".TrendingAdapter" />
-        <activity android:name=".Place"></activity>
+        <activity android:name=".Place" />
+        <activity android:name=".NewsAdapter"></activity>
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.android.visionshare.Model.GenericListObject;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,22 +52,28 @@ public class News extends Fragment {
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(20).addValueEventListener(new ValueEventListener() {
 
-            private LinkedList<String> tempStack = new LinkedList<>();
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                for (DataSnapshot newsMeta : dataSnapshot.getChildren()){
-                    tempStack.push(newsMeta.child("Headline").getValue(String.class));
-                }
-                newsList.setAdapter(new ArrayAdapter<>(getActivity(),
-                        android.R.layout.simple_list_item_1, tempStack.toArray()));
-            }
+                    private LinkedList<GenericListObject> tempStack = new LinkedList<>();
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot newsMeta : dataSnapshot.getChildren()){
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
+                            GenericListObject ins = new GenericListObject(
+                                    newsMeta.getKey(),
+                                    newsMeta.child("Headline").getValue(String.class),
+                                    newsMeta.child("nOfComments").getValue(String.class),
+                                    "News"
+                            );
+                            tempStack.push(ins);
+                        }
+                        GenericListAdapter adapter = new GenericListAdapter(getContext(), tempStack);
+                        newsList.setAdapter(adapter);
+                    }
 
-            }
-        });
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
 
+                    }
+                });
 
 
     }

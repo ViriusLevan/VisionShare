@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
-import com.example.android.visionshare.Model.ListViewLayout;
+import com.example.android.visionshare.Model.GenericListObject;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class Trending extends Fragment {
     View view;
-    TrendingAdapter adapter;
+    GenericListAdapter adapter;
     private FirebaseDatabase fd;
     private DatabaseReference trendingMetaRef;
     private ValueEventListener newsMetaListener;
@@ -57,10 +57,10 @@ public class Trending extends Fragment {
         });
 
         ListView listView = view.findViewById(R.id.trending_listView);
-        ArrayList<ListViewLayout> trend = new ArrayList<ListViewLayout>();
-        trend.add(new ListViewLayout("1", "Pantai Kute", "5", "place"));
-        trend.add(new ListViewLayout("2", "Nude Beach", "5", "place"));
-        adapter = new TrendingAdapter(getContext(), trend);
+        ArrayList<GenericListObject> trend = new ArrayList<GenericListObject>();
+        trend.add(new GenericListObject("1", "Pantai Kute", "5", "place"));
+        trend.add(new GenericListObject("2", "Nude Beach", "5", "place"));
+        adapter = new GenericListAdapter(getContext(), trend);
         listView.setAdapter(adapter);
 
         return view;
