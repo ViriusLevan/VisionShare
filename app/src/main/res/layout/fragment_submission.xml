@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/submissionSubmitBtn"
             android:text="Name"
+            android:fontFamily="@font/futura_book_font"
             android:textColor="#000000"
             android:textSize="12sp"/>
 
@@ -38,6 +39,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Name"
+            android:fontFamily="@font/futura_book_font"
             android:inputType="textPersonName" />
 
         <TextView
@@ -45,6 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Location"
+            android:fontFamily="@font/futura_book_font"
             android:textColor="#000000"
             android:textSize="12sp"/>
 
@@ -54,6 +57,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Location"
+            android:fontFamily="@font/futura_book_font"
             android:inputType="textPersonName" />
 
         <TextView
@@ -61,6 +65,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Description"
+            android:fontFamily="@font/futura_book_font"
             android:textColor="#000000"
             android:textSize="12sp"/>
 
@@ -70,6 +75,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Description"
+            android:fontFamily="@font/futura_book_font"
             android:inputType="textMultiLine"
             android:singleLine="false" />
 
@@ -83,6 +89,7 @@
         android:layout_marginBottom="15dp"
         android:layout_centerHorizontal="true"
         android:text="Button"
+        android:fontFamily="@font/futura_book_font"
         android:textColor="@color/white"
         android:background="@drawable/blue_button"/>
 

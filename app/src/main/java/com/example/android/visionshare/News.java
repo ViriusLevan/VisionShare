@@ -10,12 +10,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.example.android.visionshare.Model.ListViewLayout;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Stack;
 
@@ -27,6 +29,7 @@ public class News extends Fragment {
     private DatabaseReference newsMetaRef;
     private ValueEventListener newsMetaListener;
     private ListView newsList;
+    TrendingAdapter adapter;
     View view;
 
     @Override
@@ -39,6 +42,12 @@ public class News extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_news, container, false);
+        ListView listView = view.findViewById(R.id.news_listView);
+        ArrayList<ListViewLayout> news = new ArrayList<ListViewLayout>();
+        news.add(new ListViewLayout("1", "Ada Pelangi di UC", "5", "place"));
+        news.add(new ListViewLayout("2", "#2018GantiKetuaSU", "5", "place"));
+        adapter = new TrendingAdapter(getContext(), news);
+        listView.setAdapter(adapter);
         return view;
     }
 
@@ -46,7 +55,7 @@ public class News extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        newsList = view.findViewById(R.id.news_list);
+        newsList = view.findViewById(R.id.news_listView);
 
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(20).addValueEventListener(new ValueEventListener() {

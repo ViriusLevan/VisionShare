@@ -21,9 +21,9 @@
             android:gravity="center"/>
 
         <ListView
+            android:id="@+id/news_listView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/news_list"></ListView>
+            android:layout_height="wrap_content"></ListView>
     </LinearLayout>
 
 </FrameLayout>
