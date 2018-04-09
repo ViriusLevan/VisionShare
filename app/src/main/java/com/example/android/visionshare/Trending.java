@@ -10,14 +10,27 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Spinner;
 
+import com.example.android.visionshare.Model.ListViewLayout;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class Trending extends Fragment {
     View view;
+    TrendingAdapter adapter;
+    private FirebaseDatabase fd;
+    private DatabaseReference trendingMetaRef;
+    private ValueEventListener newsMetaListener;
+    private ListView newsList;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        fd = FirebaseDatabase.getInstance();
+//        trendingMetaRef = fd.getReference().child("News Meta");
     }
 
     @Override
@@ -44,8 +57,11 @@ public class Trending extends Fragment {
         });
 
         ListView listView = view.findViewById(R.id.trending_listView);
-        String[] trend = {"Pantai Kute", "Tugu Pahlawan"};
-        listView.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, trend));
+        ArrayList<ListViewLayout> trend = new ArrayList<ListViewLayout>();
+        trend.add(new ListViewLayout("1", "Pantai Kute", "5", "place"));
+        trend.add(new ListViewLayout("2", "Nude Beach", "5", "place"));
+        adapter = new TrendingAdapter(getContext(), trend);
+        listView.setAdapter(adapter);
 
         return view;
     }
