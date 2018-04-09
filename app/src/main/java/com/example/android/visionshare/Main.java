@@ -28,7 +28,7 @@ public class Main extends AppCompatActivity {
                 break;
             case R.id.navigation_trending:
 //                mTextMessage.setText(R.string.title_trending);
-                selectedFragment= (Fragment) new Trending();
+                selectedFragment= (Fragment) new Dashboard();
                 break;
             case R.id.navigation_news:
 //                mTextMessage.setText(R.string.title_news);
