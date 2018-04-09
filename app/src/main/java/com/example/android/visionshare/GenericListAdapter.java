@@ -6,19 +6,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import java.util.LinkedList;
 
-import com.example.android.visionshare.Model.ListViewLayout;
+import com.example.android.visionshare.Model.GenericListObject;
 
 import java.util.ArrayList;
 
-public class TrendingAdapter extends ArrayAdapter{
+public class GenericListAdapter extends ArrayAdapter{
 
-    public TrendingAdapter(Context context, ArrayList<ListViewLayout> data) {
+    public GenericListAdapter(Context context, ArrayList<GenericListObject> data) {
+        super(context, R.layout.activity_trending_adapter, data);
+    }
+
+    public GenericListAdapter(Context context, LinkedList<GenericListObject> data) {
         super(context, R.layout.activity_trending_adapter, data);
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
-        ListViewLayout item = (ListViewLayout) getItem(position);
+        GenericListObject item = (GenericListObject) getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_trending_adapter, parent, false);

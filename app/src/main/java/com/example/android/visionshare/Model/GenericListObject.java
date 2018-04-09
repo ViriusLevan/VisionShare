@@ -1,9 +1,9 @@
 package com.example.android.visionshare.Model;
 
-public class ListViewLayout {
+public class GenericListObject {
     String id_firebase, title, num_of_comment, type;
 
-    public ListViewLayout(String id_firebase, String title, String num_of_comment, String type) {
+    public GenericListObject(String id_firebase, String title, String num_of_comment, String type) {
         this.id_firebase = id_firebase;
         this.title = title;
         this.num_of_comment = num_of_comment;
