@@ -47,7 +47,7 @@ public class News extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        newsList = view.findViewById(R.id.news_list);
+        newsList = view.findViewById(R.id.news_listView);
 
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(20).addValueEventListener(new ValueEventListener() {
@@ -60,7 +60,7 @@ public class News extends Fragment {
                             GenericListObject ins = new GenericListObject(
                                     newsMeta.getKey(),
                                     newsMeta.child("Headline").getValue(String.class),
-                                    newsMeta.child("nOfComments").getValue(String.class),
+                                    String.valueOf(newsMeta.child("nOfComments").getValue()),
                                     "News"
                             );
                             tempStack.push(ins);

@@ -9,17 +9,17 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.android.visionshare.Model.ListViewLayout;
+import com.example.android.visionshare.Model.GenericListObject;
 
 import java.util.ArrayList;
 
 public class NewsAdapter extends ArrayAdapter {
 
-    public NewsAdapter(Context context, ArrayList<ListViewLayout> data) {
+    public NewsAdapter(Context context, ArrayList<GenericListObject> data) {
         super(context, R.layout.activity_news_adapter, data);
     }
     public View getView(int position, View convertView, ViewGroup parent) {
-        ListViewLayout item = (ListViewLayout) getItem(position);
+        GenericListObject item = (GenericListObject) getItem(position);
 
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_news_adapter, parent, false);
