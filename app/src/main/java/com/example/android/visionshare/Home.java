@@ -26,8 +26,8 @@ public class Home extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private FirebaseDatabase fd;
-    private DatabaseReference newsMetaRef;
-    private ValueEventListener newsMetaListener;
+    private DatabaseReference newsMetaRef, trendingMetaRef;
+    private ValueEventListener newsMetaListener, trendingMetaListener;
     private ListView newsList, trendingList;
 
     // TODO: Rename and change types of parameters
@@ -72,11 +72,8 @@ public class Home extends Fragment {
                 startActivity(a);
             }
         });
-        trendingList = view.findViewById(R.id.home_trending_list);
 
 
-        String[] trend = {"Pantai Kute", "Tugu Pahlawan", "Bandar Jakarta"};
-        trendingList.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, trend));
         return view;
     }
 
@@ -84,6 +81,23 @@ public class Home extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         newsList = view.findViewById(R.id.home_news_list);
+        trendingList = view.findViewById(R.id.home_trending_list);
+
+        LinkedList<Model_GenericListObject> fake = new LinkedList<>();
+        fake.push(new Model_GenericListObject(
+            "Crowdfunding1","Beach Cleaning", "1", "Crowdfunding",
+                "Kuta Beach","50000","1000000"
+        ));
+        fake.push(new Model_GenericListObject(
+                "News1","Promo Durian Murah", "1", "News",
+                "Pasar A"
+        ));
+        fake.push(new Model_GenericListObject(
+                "Place1","Hidden Dragon", "1", "Place"
+        ));
+        GenericListAdapter temAdap = new GenericListAdapter(getContext(),fake);
+        trendingList.setAdapter(temAdap);
+
         newsMetaListener = newsMetaRef.orderByChild("Date Created")
                 .limitToLast(5).addValueEventListener(new ValueEventListener() {
 
@@ -109,5 +123,11 @@ public class Home extends Fragment {
 
                     }
                 });
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        newsMetaRef.removeEventListener(newsMetaListener);
     }
 }

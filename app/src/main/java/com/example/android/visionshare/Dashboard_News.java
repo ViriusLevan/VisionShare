@@ -61,7 +61,7 @@ public class Dashboard_News extends Fragment {
                                     newsMeta.getKey(),
                                     newsMeta.child("Headline").getValue(String.class),
                                     String.valueOf(newsMeta.child("nOfComments").getValue()),
-                                    "News"
+                                    "News", newsMeta.child("Place").getValue(String.class)
                             );
                             tempStack.push(ins);
                         }
