@@ -28,7 +28,7 @@ public class Dashboard_Crowdfunding extends Fragment{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         fd = FirebaseDatabase.getInstance();
-        crowdfundingMetaRef = fd.getReference().child("Crowdfunding Meta");
+        crowdfundingMetaRef = fd.getReference().child("Crowdfunding Projects");
     }
 
     @Override
@@ -55,7 +55,9 @@ public class Dashboard_Crowdfunding extends Fragment{
                                     newsMeta.getKey(),
                                     newsMeta.child("Headline").getValue(String.class),
                                     String.valueOf(newsMeta.child("nOfComments").getValue()),
-                                    "Crowdfunding"
+                                    "Crowdfunding", newsMeta.child("Place").getValue(String.class),
+                                    String.valueOf(newsMeta.child("Funds Gathered").getValue()),
+                                    String.valueOf(newsMeta.child("Funding Goal").getValue())
                             );
                             tempStack.push(ins);
                         }

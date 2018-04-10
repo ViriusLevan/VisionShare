@@ -13,33 +13,38 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class News extends AppCompatActivity {
+public class Crowdfunding extends AppCompatActivity{
 
-    TextView headline, place, content;
+    TextView headline, place, content, fundsGathered, fundingGoal;
     ImageView image;
-    ListView comments;  
+    ListView comments;
     Model_GenericListObject news;
     private FirebaseDatabase fd;
-    private DatabaseReference newsContentRef;
-    private ValueEventListener newsContentListener;
+    private DatabaseReference crowdfundingContentRef;
+    private ValueEventListener crowdfundingContentListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news);
 
-        headline = findViewById(R.id.newsHeadlineTV);
-        place = findViewById(R.id.newsPlaceTV);
-        content = findViewById(R.id.newsContentTV);
+        headline = findViewById(R.id.crowdfundingNameTV);
+        place = findViewById(R.id.crowdfundingPlaceTV);
+        content = findViewById(R.id.crowdfundingDescriptionTV);
+        fundsGathered = findViewById(R.id.crowdfundingFundsGatheredTV);
+        fundingGoal = findViewById(R.id.crowdfundingFundsNeededTV);
 
         //Mengambil data
         news = (Model_GenericListObject) getIntent().getSerializableExtra("news_object");
         headline.setText(news.getTitle());
         place.setText(news.getPlace());
-        fd = FirebaseDatabase.getInstance();
-        newsContentRef = fd.getReference().child("News Content");
+        fundsGathered.setText(news.getFundsGathered());
+        fundingGoal.setText(news.getFundingGoal());
 
-        newsContentListener = newsContentRef.addValueEventListener(new ValueEventListener() {
+        fd = FirebaseDatabase.getInstance();
+        crowdfundingContentRef = fd.getReference().child("Crowdfunding Content");
+
+        crowdfundingContentListener = crowdfundingContentRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 content.setText(dataSnapshot.child
@@ -54,9 +59,10 @@ public class News extends AppCompatActivity {
 
     }
 
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        newsContentRef.removeEventListener(newsContentListener);
+        crowdfundingContentRef.removeEventListener(crowdfundingContentListener);
     }
 }

@@ -55,6 +55,7 @@ public class Dashboard_Trending extends Fragment {
         ArrayList<String> items = new ArrayList<String>();
         items.add("Today");
         items.add("Monthly");
+        listView = view.findViewById(R.id.trending_listView);
         dropdown.setAdapter(new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, items));
 
         dropdown.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -62,8 +63,35 @@ public class Dashboard_Trending extends Fragment {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(parent.getItemAtPosition(position).toString().equals("Today")){
                     spinnerValue = 0;
+
+                    LinkedList<Model_GenericListObject> fake = new LinkedList<>();
+                    fake.push(new Model_GenericListObject(
+                            "Crowdfunding1","Beach Cleaning", "1", "Crowdfunding",
+                            "Kuta Beach","50000","1000000"
+                    ));
+                    fake.push(new Model_GenericListObject(
+                            "News1","Promo Durian Murah", "1", "News",
+                            "Pasar A"
+                    ));
+                    fake.push(new Model_GenericListObject(
+                            "Place1","Hidden Dragon", "1", "Place"
+                    ));
+                    GenericListAdapter temAdap = new GenericListAdapter(getContext(),fake);
+                    listView.setAdapter(temAdap);
                 }else if(parent.getItemAtPosition(position).toString().equals("Monthly")){
                     spinnerValue = 1;
+
+                    LinkedList<Model_GenericListObject> fake = new LinkedList<>();
+                    fake.push(new Model_GenericListObject(
+                            "Crowdfunding1","Beach Cleaning", "1", "Crowdfunding",
+                            "Kuta Beach","50000","1000000"
+                    ));
+                    fake.push(new Model_GenericListObject(
+                            "News1","Promo Durian Murah", "1", "News",
+                            "Pasar A"
+                    ));
+                    GenericListAdapter temAdap = new GenericListAdapter(getContext(),fake);
+                    listView.setAdapter(temAdap);
                 }
             }
 
@@ -73,7 +101,6 @@ public class Dashboard_Trending extends Fragment {
             }
         });
 
-        listView = view.findViewById(R.id.trending_listView);
         ArrayList<Model_GenericListObject> trend = new ArrayList<Model_GenericListObject>();
         trend.add(new Model_GenericListObject("1", "Pantai Kute", "5", "place"));
         trend.add(new Model_GenericListObject("2", "Nude Beach", "5", "place"));
