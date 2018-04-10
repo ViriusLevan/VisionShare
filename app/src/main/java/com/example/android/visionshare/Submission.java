@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.android.visionshare.Model.Model_Submission;
 import com.google.firebase.database.ChildEventListener;
@@ -71,6 +72,7 @@ public class Submission extends Fragment{
                 submissionRef.child(newKey).child("Status").setValue("Pending");
                 submissionRef.child(newKey).child("Submitted by").setValue("DUMMY USER");
                 submissionRef.child(newKey).child("Funding Goal").setValue(1000000);
+                Toast.makeText(getContext(), "Submit complete", Toast.LENGTH_SHORT).show();
             }
         });
     }

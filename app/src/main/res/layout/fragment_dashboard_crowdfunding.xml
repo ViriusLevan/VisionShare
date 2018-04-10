@@ -12,13 +12,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="NEWS"
-            android:textColor="#000000"
-            android:fontFamily="@font/futura_book_font"
-            android:textSize="18sp"
-            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:gravity="center"/>
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/futura_book_font"
+            android:gravity="center"
+            android:text="CROWDFUNDING"
+            android:textColor="#000000"
+            android:textSize="18sp" />
 
         <ListView
             android:id="@+id/crowdfunding_listView"

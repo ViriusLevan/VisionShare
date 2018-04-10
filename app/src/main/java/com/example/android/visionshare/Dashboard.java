@@ -62,7 +62,7 @@ public class Dashboard extends Fragment {
         Adapter adapter = new Adapter(getChildFragmentManager());
         adapter.addFragment(new Dashboard_News(), "News");
         adapter.addFragment(new Dashboard_Place(), "Places");
-        adapter.addFragment(new Dashboard_Place(), "Trending");
+        adapter.addFragment(new Dashboard_Trending(), "Trending");
         adapter.addFragment(new Dashboard_Crowdfunding(), "Funding");
         viewPager.setAdapter(adapter);
     }

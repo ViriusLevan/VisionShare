@@ -28,10 +28,6 @@ public class Main extends AppCompatActivity {
 //                mTextMessage.setText(R.string.title_trending);
                 selectedFragment= (Fragment) new Dashboard();
                 break;
-            case R.id.navigation_news:
-//                mTextMessage.setText(R.string.title_news);
-                selectedFragment = (Fragment) new Dashboard_News();
-                break;
             case R.id.navigation_submission:
 //                mTextMessage.setText(R.string.title_submission);
                 selectedFragment= Submission.newInstance();
