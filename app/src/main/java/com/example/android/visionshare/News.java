@@ -12,7 +12,7 @@ public class News extends AppCompatActivity {
 
     TextView headline, place, content;
     ImageView image;
-    ListView comments;  
+    ListView comments;
     Model_GenericListObject news;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
