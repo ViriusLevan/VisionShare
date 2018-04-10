@@ -1,6 +1,8 @@
 package com.example.android.visionshare.Model;
 
-public class Model_GenericListObject {
+import java.io.Serializable;
+
+public class Model_GenericListObject implements Serializable{
     String id_firebase, title, num_of_comment, type;
 
     public Model_GenericListObject(String id_firebase, String title, String num_of_comment, String type) {

@@ -1,12 +1,14 @@
 package com.example.android.visionshare;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.android.visionshare.Model.Model_GenericListObject;
@@ -65,6 +67,14 @@ public class Dashboard_News extends Fragment {
                         }
                         GenericListAdapter adapter = new GenericListAdapter(getContext(), tempStack);
                         newsList.setAdapter(adapter);
+                        newsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                                Intent news = new Intent(getActivity(), News.class);
+                                news.putExtra("news_object", tempStack.get(i));
+                                startActivity(news);
+                            }
+                        });
                     }
 
                     @Override
